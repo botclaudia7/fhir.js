@@ -24,7 +24,9 @@
         $exact: ':exact',
         $missing: ':missing',
         $null: ':missing',
-        $text: ':text'
+        $text: ':text',
+        $above: ':above',
+        $below: ':below'
     };
 
     var isOperator = function(v) {
@@ -80,14 +82,14 @@
                     return v.map(function(x) {
                         return {
                             param: '_include',
-                            value: k + "." + x
+                            value: k + ":" + x
                         };
                     });
                 case 'string':
                     return [
                         {
                             param: '_include',
-                            value: k + "." + v
+                            value: k + ":" + v
                         }
                     ];
                 }

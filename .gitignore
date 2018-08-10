@@ -10,3 +10,4 @@ npm-debug.log
 *.term-port
 .term-port
 src/.tern-port
+package-lock.json

@@ -63,7 +63,7 @@ describe "test params builder", ->
 
   it "include", ->
     assert.deepEqual(subject($include: {Observation: "related.component", Patient: ["link.other", "careProvider"]}),
-      '_include=Observation.related.component&_include=Patient.link.other&_include=Patient.careProvider')
+      '_include=Observation%3Arelated.component&_include=Patient%3Alink.other&_include=Patient%3AcareProvider')
 
   it "or", ->
     assert.deepEqual(subject(name: {$or: ['bill', 'ted']}),

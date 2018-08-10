@@ -19,8 +19,8 @@
         if (ref.reference.match(CONTAINED)) {return resolveContained(ref.reference, arg.resource);}
         var abs = utils.absoluteUrl(arg.baseUrl, ref.reference);
         var bundled = ((bundle && bundle.entry) || []).filter( function(e){
-            return e.id === abs;
-        })[0];
+            return e.resource.id === abs || (abs.endsWith(e.resource.id) && abs.indexOf(e.resource.resourceType) !== -1);
+        })[0].resource;
         return bundled || (cache != null ? cache[abs] : void 0) || null;
     };
 

@@ -178,6 +178,7 @@
             var params = args.params || {};
             if(args.since){params._since = args.since;}
             if(args.count){params._count = args.count;}
+            if(args.getpagesoffset){params._getpagesoffset = args.getpagesoffset;}
             args.params = params;
             return h(args);
         };
